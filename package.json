@@ -1,0 +1,29 @@
+{
+  "name": "dutchauction-project-v4",
+  "version": "1.0.0",
+  "description": "DutchAuction",
+  "main": "index.js",
+  "scripts": {
+    "test": "Dutch Auction"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/felix-adigbli/DutchAuction-Project-V4.git"
+  },
+  "author": "Felix",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/felix-adigbli/DutchAuction-Project-V4/issues"
+  },
+  "homepage": "https://github.com/felix-adigbli/DutchAuction-Project-V4#readme",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "file:^2.0.0 @openzeppelin/hardhat-upgrades",
+    "@statespace/hardhat-testgen": "^0.1.1",
+    "hardhat": "^2.15.0"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts-upgradeable": "^4.9.1"
+  }
+}
+
+
