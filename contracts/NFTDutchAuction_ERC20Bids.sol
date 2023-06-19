@@ -67,7 +67,7 @@ NFTDutchAuctionToken public nftContractToken;
     function placeBid(uint256 _bidAmount) external payable {
         getCurrentPrice();
         bidTransfered = IERC20(erc20TokenAddress).balanceOf(address(this));
-        if (_bidAmount >= currentPrice && _bidAmount == bidTransfered) {
+        if (_bidAmount >= currentPrice && _bidAmount <= bidTransfered) {
             auctionEnded = true;
             IERC721(erc721TokenAddress).safeTransferFrom(
                 seller,
