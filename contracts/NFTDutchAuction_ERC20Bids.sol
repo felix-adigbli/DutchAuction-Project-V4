@@ -7,11 +7,8 @@ import "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol";
 import "./NFTdutchauctiontoken.sol";
 import "./ERC20Token.sol";
 
-contract NFTDutchAuction_ERC20BidsSol is Initializable, OwnableUpgradeable, UUPSUpgradeable {
-    /// @custom:oz-upgrades-unsafe-allow constructor
-    constructor() {
-        _disableInitializers();
-    }
+contract NFTDutchAuction_ERC20BidsSol is  Initializable, UUPSUpgradeable,  OwnableUpgradeable  {
+
 //start
 
 NFTDutchAuctionToken public nftContractToken;
@@ -39,7 +36,8 @@ NFTDutchAuctionToken public nftContractToken;
         uint256 _nftTokenId,
         address _erc721TokenAddress,
         address _erc20TokenAddress
-    ) external initializer {
+    ) public initializer {
+        __Ownable_init();
         __UUPSUpgradeable_init();
         seller = payable(msg.sender);
         reservePrice = _reservePrice;
@@ -87,10 +85,7 @@ NFTDutchAuctionToken public nftContractToken;
     }
 
 //end
-    function initialize() initializer public {
-        __Ownable_init();
-        __UUPSUpgradeable_init();
-    }
+
 
     function _authorizeUpgrade(address newImplementation)
         internal
